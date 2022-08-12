@@ -14,11 +14,18 @@ const connect = function () {
       console.log("Server message:", data);
     });
 
+    
     conn.on("connect", () => {
         console.log("Successfully connected to the game server");
         conn.write("Name: CAT");
+        setInterval(() => {
+        // conn.write("Move: up")
+        // conn.write("Move: right")
+        // conn.write("Move: down")
+        }, 1000)
     })
-  
+
+    
     return conn;
   };
 
